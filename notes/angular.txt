@@ -1,0 +1,37 @@
+TypeScript: Multi-paradigm, supports object-oriented, imperative, and functional programming styles.
+It's a superset of JavaScript, so it inherits these paradigms.
+
+
+Emit:
+"outDir": "./js"
+"sourceMap": true -> create file where we can find out how ts are mapped to js
+
+modules :
+"rootDir": "./ts",
+
+tsc == type script compiler -> tsc filename
+if we have above setup we can used only tsc
+
+if we do not assign value to varibale this variable are of type 'any' -> that mean we can in runtime change his type ?! wtf?! string->number->string ...
+We can use this with function -> function(document: any){
+					console.log(document)
+					}
+And now... We can declarate rules in json in
+Type Checkingadadasd
+
+let test = [1,2,3,4,5,6,7,8,9,'1']; -> this is valid for ts. Actually js handle this .., magic?!
+this is how ts handle above example
+let test: (string|number)[] = [1,2,3,4,5,6,7,8,9,'1'];
+
+let test: number[] = [1,2,3,4,5,6,7,8,9,'1']; but this is invalid becaouse implicit declarate arra of numbers '1' is not number
+
+Tuple -> fixed length array. Aways used for key value pairs
+let test: [string,number] = ['test',1]. Whis is nice this is fixed array with only declarated count values! In this case only 2. String and number
+However, the push method, inherited from the Array prototype, allows you to add elements to the end of the array regardless of the tuple type definition
+Avoid to used Array prototype methods....
+
+Enums -> is it good practice to used const with enums!
+Enum Size {Small,Medium,Large} -> deafault values of enums are number. So in this case small = 0, medium = 1, large = 2
+Enum Size {Small = "small",Medium = "medium",Large = "large"} -> now values are small,medium,large strings
+
+
